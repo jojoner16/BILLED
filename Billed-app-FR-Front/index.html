@@ -1,24 +1,40 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAB/tJREFUWEd1V11sVVUW/vY+9x96by9/LZWEKlQhasQXJw7BF8fBGQMBhchYKoqGoBZJkVanhseZMOBfjJlkknmZGDMZyTBGw4M+GDVGo6OZEYjGB4GaC4bWStsLbe+955xtvrX2ub38eB+U3X3OXt9Z61vf+rZZtOOsczGQDgBrgVoI+XHNXyN0MNbI2jmgHjoE1iBlgcgBYQT5dyowaEQOkT8rsEAjQnNtja5jB2TTAPxZZumj55yDkwP4EAMwUCYwgLzk+D/ZFwCRQ8oaMEAcA2HsAQUKJor1LAEQMuDc2WHkBEAmxRP92eXtFcc/plMGjDnbcIIuk9aHaqETYHyJALhPAOkUEEUO9YjZ0gwlGSAAZqUeKiCerRlwAjqbNvJRPNsUeyuOf2QAom7LG4xOxvJQKW8wL2dwZixCNmWwfHGAQtbg+EgoAW+6LoA1Bse/D5EJgCUlK4Eq4zFSAeRd/ianY3luadni9PkIuYwC4MeYzkfPSgb4QmAM/rWviM2HJuWgL//SLunc8uIkTo06/O9QCYDFU3+v4sxYjCP75mN+PsCGg5OStTf3tSGTtrhl4CfkssCnfyrDGGDt8xcw2zD44mA7bh+6IBlrlmDpTgWQtkZIeHR/EV0LLEYnQixbaGGtxY9TMUoFSIa4rs7EcM6hLW9hGAEOp8+H6F6SkjW/7PxEhOWLAhBBZTzC4qKRvdsGJ5RfwgHAlPsq2gWeA8eeL2NlZ4A4jiWgISpHwsVCysAGiF0M1o171ljwAO4THANyjwCtDSRoFMVCxjA2WNk/3uwC5cBDFcd2Yo35/nsHFqBnaQonR2roe20K9QY8CQUHZhvaduRAGOtXsHzkAEkn5WSbBs6TENj7+zweuzsvAJbvHhMOCMHrDmbxDl8C6oAxeOe5ElZ0BjgxUsPWly+i0WAWtC35VdQJZiYBIDoQaFC2GXVA+GTndGFwQw677skhchar9/7kO0wBmo5HLgfw1rNFrOgIcPL7Ov7wyiUBU8hqUDgjfU+ggdWeZkASlvvMJCulXAFm6sA3lRD99+aw6zc5RLHBzfsuNHWAmmMW9M0B4IvHhpUDx8/U8NCrF3HkmXas6rKIGQ0ONghA1pIHBMK6s/6sMfnAmnNNcRubAjYfnkTfugx2/zaPyBn09I9LBkQH2Ial3orjVyQ68O6BBQLgqzM1bHu5iqOD7Vi9LCVEIuEZkKVISMeAV64FgHMYnQI2HpzAw3dl8eS9BGDR/cQYconIEYBwoEWt3n6uXTMwQgAXsaY7LeJkDDPAFFOiVR2pjM5xj+R3cLERogpQ46QEn3/XQP/6nGSAJFy9VzMgs4Ay37XznGvV63/vb2tyoPfVaXmIwShIyUv8J9fMXHMWkAOxnwVeU5LZMHBfDo/fnRUAawYnVIgozcqBCrMlfyRxjv2xjBWdFidG6tjyYlW+SNtOv451E9YTQOSabcj9ROsDPwvY5zN1h6GNec8Bi549P0rL8yddcOUsIAeoA/8/NYttr1RxdKiM1depMPEXkISeA6x/k4ReiBJO8Jnzkw4bDk5gx11ZPPW7gmSge/cYsq2zYOHD5ACVUFuHGUi6oNd3wU3SBSShyqlyQdcJAAa8cj065XD/4UlsX0cOaBv2PD0+lwFyIBlGYkgM8J+hEm5YYkUH+l6bxtY7s1hCHZcCUOmUkMQxR0Jdi2RDn+WyOuPwxsd1qT91gJy4df8EMil9VmaB6oCTGrfqANtwywvVq/1A6P1AU4qdDDJmUBwQDQs54KWZ66FNBTwhGVAOJF5DhIizIHEpBNDKgU2HOQs4VK5tSCi9DCqGJKVuSqTYA6o1tEuGNxWaHEhmQdMPXGsW3NCRlOAS3hwoQTjAGtMNBNYroa+54R6FJ+EI96mEwBg58MIUetdmdBZQBwZUig3nCkvQQU/oSyAcGCyK/p8cqeORv17CG08XcWMLCRMllN4lIC/FOn5bpNipFLOTtv1aATQ54HVASrCw76yLnJNpJ10wXMaKDtWBrS9V0b3Yig1jTdWUAmzjIEiEh05KJyDHM1WVk5DllGF0NsTAfcqBkLNgz1wXiB/4xVlwugZyQGa2Vb/QNKXehLK+dL6plBE/QCHiV5ITSkJdD28uXDYL6DdFiDgLfskRcRpSCXkIpx5JRgBErYZDM8CgZH2aNjx2iAjAuytmi6742Y0F7F6vs6Cn/4ou6KIp9b6fHEhmwcWZCN+eow1TtBKdv2uu1coLS+U/MqX8swZd7QYd7fQSLbMguRdc7gcMjg3rNIzjSA5rHb+J0pFwYiT9PjuEzE9IeK3xTGjiCfeMI0chknsBYNqoA+IH1EZRB36YiPDWZ9M4tL2IdNri6Gc1/O3dS+CozmYCDP1jCv891cB7B8oS9MGXLmBlh8Wfe9vEth9+u4pSHth1zzzZf/3DaSHjgQfmo/tJ9YSc7rMkIe+GassVwOZfZfHPj2cF0PrbMigWrKxJrLWr0pLgD76uCw/WXJ9C+zyD90/UhfXrVqWxbFGA1z+alf0td2ZF3vk+ebTxjgyOfFJTKYYRfpnOnXo5lbshr1O8mvFyyl4TvVadl3GcXE696WTLsfWSu2LShlxbtiWV0Y96nnHV3bDVE7KNCEDvhgYZ3mCTuyG8FHsrzXnPrmCL8dBEenUWeJeczAJfXrn4+ruhWDLT4gl1HKt4EAC/NOlVGhC5nKavvpwSAF1NMgsIgIDmdEDXfJdixZSz3K2e8GexCeCPD5of1AAAAABJRU5ErkJggg=="
+    />
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="src/css/login.css">
-    <link rel="stylesheet" href="src/css/layout.css">
-    <link rel="stylesheet" href="src/css/bills.css">
-    <link rel="stylesheet" href="src/css/actions.css">
-    <link rel="stylesheet" href="src/css/newbill.css">
-    <link rel="stylesheet" href="src/css/dashboard.css">
-    <link rel="stylesheet" href="src/css/dashboardForm.css">
-    <link rel="stylesheet" href="src/css/loading.css">
+    <link rel="stylesheet" href="src/css/login.css" />
+    <link rel="stylesheet" href="src/css/layout.css" />
+    <link rel="stylesheet" href="src/css/bills.css" />
+    <link rel="stylesheet" href="src/css/actions.css" />
+    <link rel="stylesheet" href="src/css/newbill.css" />
+    <link rel="stylesheet" href="src/css/dashboard.css" />
+    <link rel="stylesheet" href="src/css/dashboardForm.css" />
+    <link rel="stylesheet" href="src/css/loading.css" />
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
     <!-- Material-ui -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
     <!-- Datepicker.css -->
-    <link rel="stylesheet" href="src/css/datepicker.css">
+    <link rel="stylesheet" href="src/css/datepicker.css" />
 
     <title>Billed</title>
   </head>
@@ -28,27 +44,38 @@
       display: flex;
       -ms-flex-align: center;
       align-items: center;
-      font-family: 'Roboto', sans-serif;
+      font-family: "Roboto", sans-serif;
       background-color: #fff;
     }
     #root {
       width: 100%;
       height: 100%;
     }
-  </style>  
+  </style>
   <body>
     <div id="root"></div>
     <!-- Datepicker.js -->
-    <script src="src/app/datepicker.js">
-    </script>
+    <script src="src/app/datepicker.js"></script>
     <script type="module">
-      import Router from "./src/app/Router.js"
-      import store from "./src/app/Store.js"
-      Router()
+      import Router from "./src/app/Router.js";
+      import store from "./src/app/Store.js";
+      Router();
     </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

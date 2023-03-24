@@ -19,6 +19,11 @@ const row = (bill) => {
     `;
 };
 
+// [Bug report] - Bills manque un sort pour le tri des dates
+// const rows = (data) => {
+//   return (data && data.length) ? data.map(bill => row(bill)).join("") : ""
+// }
+
 //Résolution [Bug report] - Bills
 const rows = (data) => {
   return data && data.length

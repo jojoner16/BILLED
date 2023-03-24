@@ -154,7 +154,12 @@ export default class {
       this.counter++;
     }
 
-    // [Bug Hunt] - Dashboard
+    // [Bug Hunt] - Dashboard manque ajout et suppression d'évènement sur les bills
+    // bills.forEach(bill => {
+    //   $(`#open-bill${bill.id}`).click((e) => this.handleEditTicket(e, bill, bills))
+    // })
+
+    // Résolution [Bug Hunt] - Dashboard
     bills.forEach((bill) => {
       /* On enlève l'évènement bill et on le remet */
       $(`#open-bill${bill.id}`)

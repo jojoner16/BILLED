@@ -18,7 +18,34 @@ export default class NewBill {
     new Logout({ document, localStorage, onNavigate });
   }
 
-  // [Bug Hunt] - Bills
+  // [Bug Hunt] - Bills - ajout de la condition de format de fichier dans le handleChangeFile et modification de la récupération de l'input select
+  // handleChangeFile = e => {
+  //   e.preventDefault()
+  //   const file = this.document.querySelector(`input[data-testid="file"]`).files[0]
+  //   const filePath = e.target.value.split(/\\/g)
+  //   const fileName = filePath[filePath.length-1]
+  //   const formData = new FormData()
+  //   const email = JSON.parse(localStorage.getItem("user")).email
+  //   formData.append('file', file)
+  //   formData.append('email', email)
+
+  //   this.store
+  //     .bills()
+  //     .create({
+  //       data: formData,
+  //       headers: {
+  //         noContentType: true
+  //       }
+  //     })
+  //     .then(({fileUrl, key}) => {
+  //       console.log(fileUrl)
+  //       this.billId = key
+  //       this.fileUrl = fileUrl
+  //       this.fileName = fileName
+  //     }).catch(error => console.error(error))
+  // }
+
+  // Résolution [Bug Hunt] - Bills
   handleChangeFile = (e) => {
     e.preventDefault();
     /* Modification de la récupération de l'input select */

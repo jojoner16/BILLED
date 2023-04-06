@@ -14,6 +14,7 @@ import mockStore from "../__mocks__/store";
 import { bills } from "../fixtures/bills.js";
 import router from "../app/Router.js";
 
+// Étant donné que je suis connecté en tant qu'employé
 describe("Given I am connected as an employee", () => {
   Object.defineProperty(window, "localStorage", { value: localStorageMock });
 
@@ -28,7 +29,9 @@ describe("Given I am connected as an employee", () => {
     document.body.innerHTML = ROUTES({ pathname, data: bills });
   };
 
+  // Quand je suis sur la page Nouvelle note de frais
   describe("When I am on NewBill Page", () => {
+    // Alors L'icône de courrier en disposition verticale doit être mise en surbrillance
     test("Then mail icon in vertical layout should be highlihted", async () => {
       const root = document.createElement("div");
       root.setAttribute("id", "root");
@@ -39,6 +42,8 @@ describe("Given I am connected as an employee", () => {
       const mailIcon = screen.getByTestId("icon-mail");
       expect(mailIcon.classList.contains("active-icon")).toBeTruthy();
     });
+
+    // Alors l'ajout d'un fichier au formulaire doit appeler l'API
     test("Then adding a file to the form should call the api", async () => {
       window.localStorage.setItem("user", JSON.stringify({ type: "Employee" }));
       const html = NewBillUI();
@@ -78,7 +83,9 @@ describe("Given I am connected as an employee", () => {
     });
   });
 
+  // Quand je suis sur la page NewBill et que je télécharge un fichier avec une extension jpg, jpeg ou png
   describe("When I am on NewBill page and I upload a file with an extension jpg, jpeg or png", () => {
+    // Alors aucun message pour le champ fichier ne doit être affiché
     test("Then no message for the file input should be displayed", () => {
       document.body.innerHTML = NewBillUI();
 
@@ -115,7 +122,9 @@ describe("Given I am connected as an employee", () => {
     });
   });
 
+  // Quand je suis sur la page NewBill et que je télécharge un fichier avec une extension autre que jpg, jpeg ou png
   describe("When I am on NewBill page and I upload a file with an extension other than jpg, jpeg or png", () => {
+    // Alors un message pour le champ fichier doit être affiché
     test("Then an error message for the file input should be displayed", () => {
       const newBill = new NewBill({
         document,
@@ -142,17 +151,12 @@ describe("Given I am connected as an employee", () => {
 
       expect(handleChangeFile).toHaveBeenCalled();
       expect(screen.getByTestId("file").files[0].name).toBe("test.pdf");
-
-      // const catchErrorMessage = console.error(
-      //   "Le fichier doit être au format jpg, jpeg ou png"
-      // );
-
-      // const errorMessage = catchErrorMessage;
-      // expect(errorMessage).not.toBeTruthy();
     });
   });
 
+  // Quand je suis sur la page NewBill et que je soumets le formulaire avec tous les champs remplis
   describe("When I am on NewBill page and I submit a form with all fields filled", () => {
+    // Alors une nouvelle note de frais doit être créée
     test("Then a new bill should be created", () => {
       const newBill = new NewBill({
         document,
@@ -174,7 +178,9 @@ describe("Given I am connected as an employee", () => {
   });
 
   // test integration POST
+  // Quand je soumets un formulaire valide
   describe("When I submit a valid form", () => {
+    // Le gestionnaire de soumission doit renvoyer newBill et accéder à la page Factures
     test("Submit handler should return newBill & navigate to Bills Page", async () => {
       const fakeBill = {
         type: "Transports",
@@ -234,6 +240,7 @@ describe("Given I am connected as an employee", () => {
   });
 
   // test erreurs 404/500
+  // Quand une erreur survient sur l'API
   describe("When an error occurs on API", () => {
     beforeEach(() => {
       jest.spyOn(mockStore, "bills");
@@ -252,6 +259,8 @@ describe("Given I am connected as an employee", () => {
       document.body.appendChild(root);
       router();
     });
+
+    // récupère les factures d'une API et échoue avec une erreur de message 404
     test("fetches bills from an API and fails with 404 message error", async () => {
       mockStore.bills.mockImplementationOnce(() => {
         return {
@@ -265,6 +274,7 @@ describe("Given I am connected as an employee", () => {
       expect(message).toBeTruthy();
     });
 
+    // récupère les factures d'une API et échoue avec une erreur de message 500
     test("fetches bills from an API and fails with 500 message error", async () => {
       mockStore.bills.mockImplementationOnce(() => {
         return {

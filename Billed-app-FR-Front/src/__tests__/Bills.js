@@ -11,8 +11,11 @@ import mockedStore from "../__mocks__/store";
 import { ROUTES, ROUTES_PATH } from "../constants/routes.js";
 import router from "../app/Router.js";
 
+// Étant donné que je suis connecté en tant qu'employé
 describe("Given I am connected as an employee", () => {
+  // Quand je suis sur la page Factures
   describe("When I am on Bills Page", () => {
+    // Ensuite la liste des factures doit être ordonnée du plus ancien au plus récent
     test("Then bills should be ordered from earliest to latest", () => {
       const html = BillsUI({ data: bills });
       document.body.innerHTML = html;
@@ -25,6 +28,8 @@ describe("Given I am connected as an employee", () => {
       const datesSorted = [...dates].sort(antiChrono);
       expect(dates).toEqual(datesSorted);
     });
+
+    // Ensuite, l'icône de la facture dans la disposition verticale doit être mise en surbrillance
     test("Then bill icon in vertical layout should be highlighted", async () => {
       Object.defineProperty(window, "localStorage", {
         value: localStorageMock,
@@ -45,6 +50,8 @@ describe("Given I am connected as an employee", () => {
       //to-do write expect expression
       expect(windowIcon.classList.contains("active-icon")).toBeTruthy();
     });
+
+    // si des factures sont stockées, il devrait afficher les factures
     test("if Bills are Stored, it should display the Bills", async () => {
       const onNavigate = (pathname) => {
         document.body.innerHTML = ROUTES({ pathname });
@@ -65,9 +72,9 @@ describe("Given I am connected as an employee", () => {
   });
 });
 
-// quand on clic sur un new bill (handleClickNewBill)
+// Quand je clique sur le bouton Nouvelle facture
 describe("When I click on New Bill Button", () => {
-  // Vérifie si le formulaire de création de bills apparait
+  // Alors le formulaire pour créer une nouvelle facture apparaît
   test("Then the form to create a new bill appear", () => {
     // localStorage employee
     Object.defineProperty(window, "localStorage", {
@@ -100,8 +107,9 @@ describe("When I click on New Bill Button", () => {
   });
 });
 
-// Vérifie si la modale du justificatif apparait (handleClickIconEye)
+// Quand je clique sur l'icône en forme d'œil d'une facture (handleClickIconEye)
 describe("When I click on the eye icon of a bill", () => {
+  // Alors une modale doit apparaître
   test("Then a modal must appear", () => {
     const html = BillsUI({ data: bills });
     document.body.innerHTML = html;
@@ -127,8 +135,11 @@ describe("When I click on the eye icon of a bill", () => {
 });
 
 // test integration GET
+// Etant donné que je suis un utilisateur connecté en tant qu'employé
 describe("Given I am a user connected as Employee", () => {
+  // Quand j'accède à Factures
   describe("When I navigate to Bills", () => {
+    // récupère les factures de l'API simulée GET
     test("fetches bills from mock API GET", async () => {
       const onNavigate = (pathname) => {
         document.body.innerHTML = ROUTES({ pathname });
@@ -156,6 +167,7 @@ describe("Given I am a user connected as Employee", () => {
   });
 
   // tests erreurs 404/500
+  // Quand une erreur survient sur l'API
   describe("When an error occurs on API", () => {
     beforeEach(() => {
       jest.spyOn(mockedStore, "bills");
@@ -174,6 +186,8 @@ describe("Given I am a user connected as Employee", () => {
       document.body.appendChild(root);
       router();
     });
+
+    // récupère les factures d'une API et échoue avec une erreur de message 404
     test("fetches bills from an API and fails with 404 message error", async () => {
       mockedStore.bills.mockImplementationOnce(() => {
         return {
@@ -187,6 +201,7 @@ describe("Given I am a user connected as Employee", () => {
       expect(message).toBeTruthy();
     });
 
+    // récupère les factures d'une API et échoue avec une erreur de message 500
     test("fetches bills from an API and fails with 500 message error", async () => {
       mockedStore.bills.mockImplementationOnce(() => {
         return {

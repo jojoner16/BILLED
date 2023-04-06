@@ -160,13 +160,20 @@ export default class {
     // })
 
     // Résolution [Bug Hunt] - Dashboard
-    bills.forEach((bill) => {
-      /* On enlève l'évènement bill et on le remet */
-      $(`#open-bill${bill.id}`)
-        .off()
-        .on()
-        .click((e) => this.handleEditTicket(e, bill, bills));
-    });
+    // bills.forEach((bill) => {
+    //   /* On enlève l'évènement bill et on le remet */
+    //   $(`#open-bill${bill.id}`)
+    //     .off()
+    //     .on()
+    //     .click((e) => this.handleEditTicket(e, bill, bills));
+    // });
+    if (Array.isArray(bills)) {
+      bills.forEach((bill) => {
+        $(`#open-bill${bill.id}`)
+          .off()
+          .click((e) => this.handleEditTicket(e, bill, bills));
+      });
+    }
 
     return bills;
   }
